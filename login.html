@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <title>Stationeryhed | login</title>
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/login.css">
+
+</head>
+
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo"><img src="images/logo.png"></div>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+            <li><a href="blog.html">BLOGS</a></li>
+
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="#">LOGIN</a></li>
+        </ul>
+        <div class="rightnav">
+            <!-- <input type="text" name="serach" id="search">
+            <button class="btn btn-sm">Serach</button> -->
+        </div>
+    </nav>
+
+    <form onsubmit="return validation()" name="submit-login" method="POST">
+        <div class="container">
+            <h1>Register</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <label for="username"><b class="form-label">Name</b></label>
+            <input type="text" placeholder="Your Name" name="Name" id="yourname" required>
+
+            <label for="email"><b class="form-label">Email</b class="form-label"></label>
+            <input type="text" placeholder="Enter Email" name="Email" id="email" required>
+
+            <label for="number"><b>Your Contact</b class="form-label"></label>
+            <input type="text" placeholder="Enter Phone Number" name="Phonenumber" id="number" required>
+
+            <label for="psw"><b class="form-label">Password</b></label>
+            <input type="password" placeholder="Enter Password" name="Password" id="psw" required>
+
+            <label for="psw-repeat"><b class="form-label">Confirm Password</b></label>
+            <input type="text" placeholder="Repeat Password" name="cpassword" id="cpsw" required>
+            <hr>
+
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+            <button type="submit" class="registerbtn">Register</button>
+        </div>
+
+        <div class="container signin">
+            <p>Already have an account? <a href="#">Sign in</a>.</p>
+        </div>
+    </form>
+
+    <!-- <link type="text/javascript" src="js/login.js"> -->
+
+
+    <footer style="background-color: #1b0a0a;
+   padding: 1% 8%;
+   color: white;
+   position:fixed;
+   font-size: large;
+   display: flex;
+   width: 100%;
+   margin-bottom: 0;
+   margin-top: 19vh;
+   justify-content: space-between;
+   align-items: center;
+   font-family: 'Roboto', sans-serif;">
+        <div>© 2021, Stationery Shed</div>
+        <div>Wanna talk to Stationery Shed? Or be a part of it? You can contact any of our members personally or 📧 us
+            at <strong>stationeryshed@gmail.com</strong> !</div>
+        <div>🤖Chatbot:Coming Soon!!</div>
+    </footer>
+
+    <script type="text/javascript">
+        function validation() {
+            var username = document.getElementById('name').Value;
+            var email = document.getElementById('email').value;
+            var number = document.getElementById('number').value;
+            var passwoed = document.getElementById('psw').value;
+            var cpasswoed = document.getElementById('cpsw').value;
+
+            var namecheck = /^[A-Za-z]{2,40}$/;
+            var emailcheck = /^[A-Za-z0-9._]{3,80}@{1}[A-Za-z0-9]{2,30}[.]{1}[A-Za-z.]{2,6}$/;
+            var numbercheck = /^[6789][0-9]{9}$/;
+            var passwoedcheck = /^(?=.*[0-9])(?=[.@#$%^&*])[A-Za-z0-9_!@#$%^&*]{8,16}$/;
+
+            if (namecheck.test(username)) {
+                document.getElementsById('errorname').innerHTML = "";
+            } else {
+                document.getElementById('errorname').innerHTML = "**Invalid Name";
+                return false;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbysvyoSazZ1WDlEKVNVwR1eyb3uZPvUMMdjlGiCxtzSW7rngVVkuKOMJYm8DV7klYXM/exec'
+        const form = document.forms['submit-login']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => alert("Logged in successfully"))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+
+</body>
+
+</html>
