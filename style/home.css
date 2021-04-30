@@ -182,7 +182,24 @@
     outline:none;
     
 }
-
+.btn-sm{
+    margin-top: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+    background: transparent;
+    color: white;
+    border:1px solid white;
+    border-radius: 1px;
+    padding: 4px;
+   
+}
+.rightnav #search{
+    margin-top: 14px;
+    height: 2vh;
+    width:60%;
+    position: relative;
+}
 /* .btnm2{
     padding: 3%;
     padding-bottom: 0;
