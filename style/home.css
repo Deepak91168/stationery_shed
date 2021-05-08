@@ -22,8 +22,9 @@
     align-items: center;
 }
 
-.logo img {
+.logo a img {
     width: 33%;
+   
 }
 
 .nav-list {
@@ -41,9 +42,6 @@
     margin-right: 2%;
     list-style: none;
     border-radius: 5px;
-    /* border-top-left-radius: 10px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 20px;*/
     border: 0.5px solid whitesmoke;
 
 }
@@ -51,11 +49,11 @@
 .nav-list li:hover {
 
     list-style: none;
-    border: 2px solid rgb(154, 173, 189);
+    border: 1px solid rgb(30, 42, 51);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    border-bottom-right-radius: 20px;
-    background: rgba(255, 255, 255, 0.733);
+    border-bottom-right-radius: 15px;
+    background: rgba(139, 191, 251, 0.733);
 
 }
 
@@ -68,7 +66,6 @@
 
 .nav-list li a:hover {
     cursor: pointer;
-    font-weight: bold;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.972);
     font-family: 'Yatra One', cursive;
@@ -132,16 +129,6 @@
 
 }
 
-
-/* .secondhalf img:hover {
-
-    width: 95%;
-    cursor: pointer;
-    border-radius: 100px;
-    transition: 0.3s;
-
-} */
-
 .line1 {
     color: rgb(173, 185, 173);
     padding: 4px;
@@ -157,8 +144,6 @@
     font-size: 153px;
     font-family: 'Satisfy', cursive;
     margin-left: 15%;
-    /* margin-bottom: 15.5%; */
-
 }
 .buttons{
     
@@ -200,17 +185,6 @@
     width:60%;
     position: relative;
 }
-/* .btnm2{
-    padding: 3%;
-    padding-bottom: 0;
-    padding-left: 14%;
-    font-size: 32px;
-    font-family: 'Offside', cursive;
-    color: black;
-    background-color:rgba(173, 185, 173, 0.5);
-    padding:2%;
-    outline:none;
-} */
 
 .btnm1:hover{
    
