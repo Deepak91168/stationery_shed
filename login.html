@@ -4,18 +4,8 @@
     <title>Stationeryshed | login</title>
     <link rel="stylesheet" href="style/home.css">
     <link rel="stylesheet" href="style/login.css">
-    <style>
-        .errors {
-            display: none;
-        }
 
-        .errors.show {
-            display: block;
-        }
-    </style>
-    <script src="./js/login.js" defer></script>
 </head>
-
 
 <body>
     <nav class="navbar background">
@@ -34,16 +24,11 @@
         </div>
     </nav>
 
-    <form name="submit-login" id="form" method="POST">
+    <form onsubmit="return validation()" name="submit-login" method="POST">
         <div class="container">
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
             <hr>
-            <div class="errors">
-                <h3 class="error-title">Error</h3>
-                <ul class="errors-list">
-                </ul>
-            </div>
             <label for="username"><b class="form-label">Name</b></label>
             <input type="text" placeholder="Your Name" name="Name" id="yourname" required>
 
@@ -89,6 +74,45 @@
             at <strong>stationeryshed@gmail.com</strong> !</div>
         <div>🤖Chatbot:Coming Soon!!</div>
     </footer>
+
+    <script type="text/javascript">
+        function validation() {
+            var username = document.getElementById('name').Value;
+            var email = document.getElementById('email').value;
+            var number = document.getElementById('number').value;
+            var passwoed = document.getElementById('psw').value;
+            var cpasswoed = document.getElementById('cpsw').value;
+
+            var namecheck = /^[A-Za-z]{2,40}$/;
+            var emailcheck = /^[A-Za-z0-9._]{3,80}@{1}[A-Za-z0-9]{2,30}[.]{1}[A-Za-z.]{2,6}$/;
+            var numbercheck = /^[6789][0-9]{9}$/;
+            var passwoedcheck = /^(?=.*[0-9])(?=[.@#$%^&*])[A-Za-z0-9_!@#$%^&*]{8,16}$/;
+
+            if (namecheck.test(username)) {
+                document.getElementsById('errorname').innerHTML = "";
+            } else {
+                document.getElementById('errorname').innerHTML = "**Invalid Name";
+                return false;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbysvyoSazZ1WDlEKVNVwR1eyb3uZPvUMMdjlGiCxtzSW7rngVVkuKOMJYm8DV7klYXM/exec'
+        const form = document.forms['submit-login']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => alert("Logged in successfully"))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+
 </body>
 
 </html>

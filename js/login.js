@@ -1,62 +1,20 @@
-const formInput = document.querySelector("#form");
-const usernameInput = document.querySelector("#yourname");
-const passwordInput = document.querySelector("#psw");
-const passConfirmInput = document.querySelector("#cpsw");
-const scriptURL =
-	"https://script.google.com/macros/s/AKfycbysvyoSazZ1WDlEKVNVwR1eyb3uZPvUMMdjlGiCxtzSW7rngVVkuKOMJYm8DV7klYXM/exec";
-const errorsContainer = document.querySelector(".errors");
-const errorsList = document.querySelector(".errors-list");
-const phoneInput = document.querySelector("#number");
+function validation(){
+    var username = document.getElementById('name').Value;
+    var email = document.getElementById('email').value;
+    var number = document.getElementById('number').value;
+    var passwoed = document.getElementById('psw').value;
+    var cpasswoed = document.getElementById('cpsw').value;
 
-formInput.addEventListener("submit", (e) => {
-	const phoneTest = new RegExp(
-		/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/
-	);
-	const errorMessages = [];
-	clearErrors();
-	console.log("here");
-	//      1. Ensure the username is at least 6 characters long
-	if (usernameInput.value.length < 6) {
-		errorMessages.push("Username must be at least 6 characters");
-	}
-	//      2. Ensure the password is at least 10 characters long
-	if (passwordInput.value.length < 10) {
-		errorMessages.push("Password must be at least 10 characters");
-	}
-	//      3. Ensure the password and confirmation password match
-	if (passConfirmInput.value !== passwordInput.value) {
-		errorMessages.push("Passwords must match");
-	}
-	if (!phoneTest.test(phoneInput)) {
-		errorMessages.push("Please enter a valid phone number");
-	}
-	if (errorMessages.length > 0) {
-		showErrors(errorMessages);
-		e.preventDefault();
-	}
-	if ((errorMessages.length = 0)) {
-		e.preventDefault();
-		fetch(scriptURL, {
-			method: "POST",
-			body: new FormData(form),
-		})
-			.then((response) => alert("Logged in successfully"))
-			.catch((error) => console.error("Error!", error.message));
-	}
-});
+    var namecheck = /^[A-Za-z]{2,40}$/;
+    var emailcheck = /^[A-Za-z0-9._]{3,80}@{1}[A-Za-z0-9]{2,30}[.]{1}[A-Za-z.]{2,6}$/;
+    var numbercheck = /^[6789][0-9]{9}$/;
+    var passwoedcheck = /^(?=.*[0-9])(?=[.@#$%^&*])[A-Za-z0-9_!@#$%^&*]{8,16}$/;
 
-function clearErrors() {
-	while (errorsList.children[0] != null) {
-		errorsList.removeChild(errorsList.children[0]);
-	}
-	errorsContainer.classList.remove("show");
-}
-
-function showErrors(errorMessages) {
-	errorMessages.forEach((errorMessage) => {
-		const li = document.createElement("li");
-		li.innerText = errorMessage;
-		errorsList.appendChild(li);
-	});
-	errorsContainer.classList.add("show");
+    if (namecheck.test(username)){
+        document.getElementsById('errorname').innerHTML= "";
+    }
+    else{
+        document.getElementById('errorname').innerHTML = "**Invalid Name";
+        return false;
+    }
 }
