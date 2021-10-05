@@ -1,68 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
 
 * {
-  box-sizing: border-box
+	box-sizing: border-box;
 }
 
 .container {
-  padding: 16px;
-  margin: 2.5%;
+	padding: 16px;
+	margin: 2.5%;
 }
 
-input[type=text],
-input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #e7e7e7;
+input[type="text"],
+input[type="password"] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #e7e7e7;
 }
 
-input[type=text]:focus,
-input[type=password]:focus {
-  background-color: rgb(198, 242, 245);
-  outline: none;
+input[type="text"]:focus,
+input[type="password"]:focus {
+	background-color: rgb(198, 242, 245);
+	outline: none;
 }
-
 
 hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
 }
 
-
 .registerbtn {
-  background-color: #000000e5;
-  color: white;
-  padding: 16px 20px;
-  margin: 7px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.8;
-  font-size: 20px;
-  font-family: 'New Tegomin', serif;
-  font-weight: bold;
+	background-color: #000000e5;
+	color: white;
+	padding: 16px 20px;
+	margin: 7px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.8;
+	font-size: 20px;
+	font-family: "New Tegomin", serif;
+	font-weight: bold;
 }
 
 .registerbtn:hover {
-  opacity: 1;
-  transition: 0.2s;
+	opacity: 1;
+	transition: 0.2s;
 }
-
 
 a {
-  color: dodgerblue;
+	color: dodgerblue;
 }
-
 
 .signin {
-  background-color: #f1f1f1;
-  text-align: center;
+	background-color: #f1f1f1;
+	text-align: center;
 }
-.form-label{
-  font-family: 'Offside', cursive;
+.form-label {
+	font-family: "Offside", cursive;
+}
+
+.errors {
+	background-color: hsl(0, 100%, 80%);
+	border-radius: 0.5rem;
+	padding: 10px;
+	color: hsl(0, 50%, 20%);
+	margin-bottom: 1rem;
+}
+
+.error-title {
+	margin: 0;
+	margin-bottom: 0.5rem;
+}
+
+.errors-list {
+	margin: 0;
+	padding-left: 15px;
 }
