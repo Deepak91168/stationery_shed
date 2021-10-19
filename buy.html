@@ -5,7 +5,12 @@
     <link rel="stylesheet" href="style/home.css">
     <link rel="stylesheet" href="style/buy.css">
     <link rel="icon" href="images/logo.png">
-
+    <!-- Start of txt.me widget code -->
+    <script src="https://v2.txt.me/livechat/js/wrapper/87db479b4c1b43b59900b48ea21ef846" async></script>
+    <noscript><a href="https://txt.me/reviews/87db479b4c1b43b59900b48ea21ef846" rel="nofollow">Rate our customer
+            support</a>, powered by <a href="https://txt.me" rel="noopener nofollow"
+            target="_blank">txt.me</a></noscript>
+    <!-- End of txt.me widget code -->
 </head>
 
 <body>
@@ -15,7 +20,7 @@
             <li><a href="index.html">HOME</a></li>
             <li><a href="shop.html">SHOP</a></li>
             <li><a href="blog.html">BLOGS</a></li>
-        
+
             <li><a href="about.html">ABOUT</a></li>
             <li><a href="login.html">LOGIN</a></li>
         </ul>
@@ -329,20 +334,25 @@
 
             <hr>
 
-            <p style="font-family: 'Roboto', sans-serif;">Buying of any item is governed by our <a href="#" style="font-family: 'Roboto', sans-serif;">Terms & Conditions</a>.</p>
+            <p style="font-family: 'Roboto', sans-serif;">Buying of any item is governed by our <a href="#"
+                    style="font-family: 'Roboto', sans-serif;">Terms & Conditions</a>.</p>
             <button type="submit" class="registerbtn">Proceed</button>
         </div>
     </form>
     <script type="text/javascript">
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwwFcAguNva_6BMVB8uDl7EL-K_Hqe3nlRimxFH22OSz0d81Y9TlI4NvF3UShaksRJxUQ/exec'
-           const form = document.forms['submit-Buy']
-         
-           form.addEventListener('submit', e => {
-             e.preventDefault()
-             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-               .then(response => alert("Redirecting you for Payment"))
-               .catch(error => console.error('Error!', error.message))
-           })
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbwwFcAguNva_6BMVB8uDl7EL-K_Hqe3nlRimxFH22OSz0d81Y9TlI4NvF3UShaksRJxUQ/exec'
+        const form = document.forms['submit-Buy']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => alert("Redirecting you for Payment"))
+                .catch(error => console.error('Error!', error.message))
+        })
     </script>
 
 
